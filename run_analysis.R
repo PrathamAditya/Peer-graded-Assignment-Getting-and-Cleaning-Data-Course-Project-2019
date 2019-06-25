@@ -69,5 +69,6 @@ completed_data <- merge(data_wants, activityLabels,by='activityId', all.x=TRUE)
 
 library(plyr)
 completed_data_mean <- ddply(completed_data, .(subjectId, activityId), function(x) colMeans(x[, 1:66]))
-
+completed_data_mean[, 2] <- activityLabels[completed_data_mean[, 2], 2]
+                             
 write.table(completed_data_mean, "tidy_data.txt", row.name=FALSE)
