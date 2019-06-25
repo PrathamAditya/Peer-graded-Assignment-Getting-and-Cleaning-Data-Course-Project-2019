@@ -1,5 +1,5 @@
 # Peer-graded-Assignment-Getting-and-Cleaning-Data-Course-Project-2019
-## Getting and Cleaning Data Course Projectless
+## Getting and Cleaning Data Course Project
 This is course project for Getting and Data Cleaning Course on Coursera. The purpose of this project is to demonstrate the ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. It will be graded by peers on a series of yes/no questions related to the project. It will be required to submit: 
 1) a tidy data set as described below, 
 2) a link to a Github repository with script for performing the analysis, and 
