@@ -67,10 +67,7 @@ completed_data <- merge(data_wants, activityLabels,by='activityId', all.x=TRUE)
 # Create a second, independent tidy data set with the average of each variable
 # for each activity and each subject
 
-library(reshape2)
-completed_data$activityId <- factor(completed_data$activityId, levels = activityLabels[,1], labels = activityLabels[,2])
-completed_data$subjectId <- as.factor(completed_data$subjectId)
-completed_data_melted <- melt(completed_data, id = c("subjectId", "activityId"))
-completed_data_mean <- dcast(completed_data_melted, subjectId + activityId ~ variable, mean)
+library(plyr)
+completed_data_mean <- ddply(completed_data, .(subjectId, activityId), function(x) colMeans(x[, 1:66]))
 
 write.table(completed_data_mean, "tidy_data.txt", row.name=FALSE)
